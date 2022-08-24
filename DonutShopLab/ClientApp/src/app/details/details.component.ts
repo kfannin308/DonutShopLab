@@ -37,7 +37,7 @@ export class DetailsComponent implements OnInit {
   }
   public addToCart(details: Details) {
     this.cartService.addToCart(details);
-    window.alert('Your product has been added to the cart!');
+    window.alert('Your donut has been added to the cart!');
   }
   
 }

@@ -12,7 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { DisplayDonutComponent } from './display-donut/display-donut.component';
 import { DetailsComponent } from './details/details.component';
 import { CartComponent } from './cart/cart.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     DisplayDonutComponent,
     DetailsComponent,
     CartComponent,
-    TopBarComponent
+   
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

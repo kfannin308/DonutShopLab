@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-display-donut',

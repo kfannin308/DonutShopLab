@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
+import { Details, DonutService } from '../donut.service';
 
 @Component({
   selector: 'app-cart',
@@ -13,6 +14,30 @@ export class CartComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //this.items = this.cartService.getItems();
   }
 
+  public clearCart() {
+    this.cartService.clearCart();
+    window.alert('Your cart has be emptied!');
+    location.reload();
+  }
+  public removeFromCart(items: Details[], item: Details) {
+    //console.log("hit removeFromCart code");
+    console.log("hit removeFromCart code " + item.name);
+    this.items = this.cartService.getItems();
+
+    for (var i = 0; i < items.length; i++) {
+      console.log("hit loop" + i.toString()) + " " + item.id.toString();
+      if (items[i].id == item.id) {
+        items.splice(i, 1);
+        window.alert('Your donut has been removed from the cart!' + i.toString());
+        console.log("Idx: " + i.toString());
+
+      }
+
+    }
+    
+    //location.reload();
+  }
 }

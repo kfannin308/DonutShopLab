@@ -14,6 +14,11 @@ export class HomeComponent {
   constructor(private thisDonutService: DonutService) {
   }
 
+  ngOnInit(): void {
+    
+    this.getDonutList();
+  }
+
   public getDonutList() {
     // The order is important here.  If we subscribe FIRST, we can guarantee we will receive
     // all data provided by the event.  If we subscribe SECOND, we may not.
