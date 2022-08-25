@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
-import { DonutService, DonutInfo, bigDonut } from '../donut.service'
+import { CartService } from '../cart.service';
+import { DonutService, DonutInfo, bigDonut } from '../donut.service';
+
 
 @Component({
   selector: 'app-home',
@@ -11,12 +13,21 @@ export class HomeComponent {
   private isNewDonutsAvailableEventSubscribed: boolean = false;
 
 
-  constructor(private thisDonutService: DonutService) {
+  constructor(private thisDonutService: DonutService, private cartService: CartService) {
   }
+  
 
   ngOnInit(): void {
     
     this.getDonutList();
+    this.getItems();
+   
+  }
+
+  public getItems() {
+
+    this.cartService.getItems();
+    console.log('Home Cart Items Total: ' + this.cartService.items.length.toString());
   }
 
   public getDonutList() {
@@ -32,6 +43,8 @@ export class HomeComponent {
     }
     this.thisDonutService.GetInfoFromServer();
   }
-
+ 
+  
+  
 }
-
+ 

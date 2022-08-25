@@ -14,13 +14,18 @@ export class CartComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.items = this.cartService.getItems();
+    this.getItems();
   }
 
   public clearCart() {
     this.cartService.clearCart();
     window.alert('Your cart has be emptied!');
     location.reload();
+  }
+  public getItems() {
+
+    this.cartService.getItems();
+    console.log('Cart - Cart Items Total: ' + this.cartService.items.length.toString());
   }
   public removeFromCart(items: Details[], item: Details) {
     //console.log("hit removeFromCart code");
