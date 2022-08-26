@@ -25,6 +25,8 @@ export class CartComponent implements OnInit {
   public getItems() {
 
     this.cartService.getItems();
+   
+
     console.log('Cart - Cart Items Total: ' + this.cartService.items.length.toString());
   }
   public removeFromCart(items: Details[], item: Details) {
@@ -43,6 +45,6 @@ export class CartComponent implements OnInit {
 
     }
     
-    //location.reload();
+    
   }
 }
