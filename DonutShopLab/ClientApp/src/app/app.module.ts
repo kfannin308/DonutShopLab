@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { DisplayDonutComponent } from './display-donut/display-donut.component';
 import { DetailsComponent } from './details/details.component';
 import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { CartComponent } from './cart/cart.component';
       { path: 'cart', component: CartComponent },
     ])
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

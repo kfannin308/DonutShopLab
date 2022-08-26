@@ -7,7 +7,9 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 
 export class DonutService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    console.log(" Donut Service Created");
+}
  
   @Output() newDonutsAvailableEvent = new EventEmitter<bigDonut>();
   @Output() newDetailAvailableEvent = new EventEmitter<Details>();

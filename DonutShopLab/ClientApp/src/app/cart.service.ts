@@ -14,7 +14,7 @@ export class CartService {
 
   getItems() {
     return this.items;
-    console.log('Service - Cart Items Total: ' + this.items.length.toString());
+    
   }
 
   clearCart() {

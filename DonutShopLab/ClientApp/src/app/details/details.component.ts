@@ -20,13 +20,13 @@ export class DetailsComponent implements OnInit {
   public id: number = 0;
 
   ngOnInit(): void {
-    this.getItems();
+   
     let idString: string | null = "";
     idString = this._Activatedroute.snapshot.paramMap.get("id");
     this.id = Number.parseInt(idString!);
-    this.getItems();
+   
     this.GetDetails();
-    this.getItems();
+    this.cartService.getItems();
     
   }
 
@@ -45,9 +45,9 @@ export class DetailsComponent implements OnInit {
     console.log('Details Add - Cart Items Total: ' + this.cartService.items.length.toString());
     
   }
-  public getItems() {
+  /*public getItems() {
  
     this.cartService.getItems();
     console.log('Details Cart Items Total: ' + this.cartService.items.length.toString());
-  }
+  }*/
 }
