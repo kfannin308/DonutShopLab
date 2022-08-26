@@ -38,9 +38,9 @@ export class CartComponent implements OnInit {
       console.log("hit loop" + i.toString()) + " " + item.id.toString();
       if (items[i].id == item.id) {
         items.splice(i, 1);
-        window.alert('Your donut has been removed from the cart!' + i.toString());
+        window.alert('Your donut has been removed from the cart!');
         console.log("Idx: " + i.toString());
-
+        return;
       }
 
     }

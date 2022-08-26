@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,12 +8,19 @@ import { Component } from '@angular/core';
 })
 export class NavMenuComponent {
   isExpanded = false;
+  constructor( public cartService: CartService) {
 
+  }
   collapse() {
     this.isExpanded = false;
   }
 
   toggle() {
     this.isExpanded = !this.isExpanded;
+  }
+  ngOnInit(): void {
+
+    this.cartService.getItems();
+
   }
 }

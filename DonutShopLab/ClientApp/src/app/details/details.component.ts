@@ -41,7 +41,7 @@ export class DetailsComponent implements OnInit {
   }
   public addToCart(details: Details) {
     this.cartService.addToCart(details);
-    window.alert('Your donut has been added to the cart!' + this.cartService.items.length.toString());
+    window.alert('Your donut has been added to the cart! Total Items in Cart:' + this.cartService.items.length.toString());
     console.log('Details Add - Cart Items Total: ' + this.cartService.items.length.toString());
     
   }
